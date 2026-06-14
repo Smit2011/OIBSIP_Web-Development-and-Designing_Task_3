@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <main class="converter-card">
+    <header class="card-header">
+      <div class="logo">🌡️</div>
+      <h1>Temperature Converter</h1>
+      <p class="subtitle">Convert between Celsius, Fahrenheit & Kelvin</p>
+    </header>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <label for="temp-input">Temperature Value</label>
+      <input
+        type="number"
+        id="temp-input"
+        placeholder="Enter Temperature"
+        step="any"
+        autocomplete="off"
+      />
+      <span class="error-message" id="error-message"></span>
+    </section>
+
+    <!-- Dropdowns Section -->
+    <section class="dropdowns">
+      <div class="dropdown-group">
+        <label for="from-unit">From</label>
+        <select id="from-unit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+      </div>
+
+      <button class="swap-btn" id="swap-btn" title="Swap Units" aria-label="Swap Units">
+        ⇄
+      </button>
+
+      <div class="dropdown-group">
+        <label for="to-unit">To</label>
+        <select id="to-unit">
+          <option value="celsius" selected>Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="actions">
+      <button class="btn btn-primary" id="convert-btn">Convert Temperature</button>
+      <button class="btn btn-secondary" id="reset-btn">Reset</button>
+    </section>
+
+    <!-- Result Section -->
+    <section class="result-section" id="result-section" hidden>
+      <p class="result-label">Result</p>
+      <p class="result-value" id="result-value"></p>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+      <div class="history-header">
+        <h2>Recent Conversions</h2>
+        <button class="clear-history" id="clear-history" hidden>Clear</button>
+      </div>
+      <ul class="history-list" id="history-list">
+        <li class="empty-history">No conversions yet</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
